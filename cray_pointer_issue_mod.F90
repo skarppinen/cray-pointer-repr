@@ -128,7 +128,7 @@ module cray_pointer_issue_mod
         real(kind = rk), intent(inout) :: output(arrlen)
         real(kind = rk), intent(in) :: x(arrlen)
         real(kind = rk), intent(in) :: y(arrlen)
-        integer(kind = rk), intent(in) :: stackpos
+        integer(kind = ik), intent(in) :: stackpos
 
         real(kind = rk) :: tmpA(arrlen)
         real(kind = rk) :: tmpB(arrlen)
