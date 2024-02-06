@@ -10,3 +10,15 @@ that accepts a slice of the `stack` array. Note that the different kernels set u
 in different ways as a consequence.
 
 Only the version with neither of the above set doesn't crash on LUMI and produces the correct result.
+
+To reproduce on LUMI:
+```
+# Interactive job.
+srun --account=*your_account_num* --partition=dev-g --gpus=1 --time=00:30:00 --pty bash
+./compile_lumi.sh # Creates executables
+
+./main_alloc_intaddr # crash
+./main_noalloc_intaddr # crash
+./main_alloc_nointaddr # crash
+./main_noalloc_nointaddr # no crash, correct results
+```
